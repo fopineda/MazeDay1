@@ -41,6 +41,8 @@ var panther = {
 //------------------------------------------------ RUNS -----------------------------------------------------
 artyom.addCommands(testing);
 artyom.addCommands(panther); // Add the command with addCommands method. Now
+artyom.say("Welcome")
+startOneCommandArtyom(); 
 
 $( ".row .col-xs-12" ).click(function() {
 //    console.log( "You clicked a play!" );
@@ -48,7 +50,7 @@ $( ".row .col-xs-12" ).click(function() {
    startOneCommandArtyom();    
 });
 
-artyom.simulateInstruction("panther");
+//artyom.simulateInstruction("panther");
 
 
 //------------------------------------------------ functions -----------------------------------------------------
