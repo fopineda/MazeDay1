@@ -41,7 +41,7 @@ var panther = {
 //------------------------------------------------ RUNS -----------------------------------------------------
 artyom.addCommands(testing);
 artyom.addCommands(panther); // Add the command with addCommands method. Now
-artyom.say("Welcome")
+artyom.say("Welcome to Felipe's Website")
 startOneCommandArtyom(); 
 
 $( ".row .col-xs-12" ).click(function() {
