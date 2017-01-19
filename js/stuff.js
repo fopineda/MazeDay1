@@ -53,7 +53,7 @@ $( ".row .col-xs-12" ).click(function() {
 
 //------------------------------------------------ functions -----------------------------------------------------
 
-function question(myQuestion, myOptions){
+function questioner(myQuestion, myOptions){
     artyom.newPrompt ({
     question: myQuestion,
     options: myOptions,
@@ -78,7 +78,7 @@ function askAQuestion (question, options, noise){
     if (noise == "Panther"){
         panther1.play();
     }
-     setTimeout(question(question, options), 3000);
+     setTimeout(questioner(question, options), 3000);
     
 }
 
