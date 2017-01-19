@@ -41,12 +41,22 @@ artyom.addCommands(panther); // Add the command with addCommands method. Now
 //startOneCommandArtyom(); 
 startContinuousArtyom();
 
-artyom.newPrompt ({
-    question: "What animal does that sound?",
-    options: ["Panther", "Black Panther","I don't know" ],
-    beforePrompt: () => {
-        panther1.play();
-    },
+askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], "Panther");
+
+
+$( ".row .col-xs-12" ).click(function() {
+   startOneCommandArtyom();    
+});
+
+//artyom.simulateInstruction("panther");
+
+
+//------------------------------------------------ functions -----------------------------------------------------
+
+function question(myQuestion, myOptions){
+    artyom.newPrompt ({
+    question: myQuestion,
+    options: myOptions,
     onMatch: (i) => {
         var action;
         if (i == 0){
@@ -61,17 +71,16 @@ artyom.newPrompt ({
     
     
     
-})
-artyom.say("it passed it");
+    })
+}
 
-$( ".row .col-xs-12" ).click(function() {
-   startOneCommandArtyom();    
-});
-
-//artyom.simulateInstruction("panther");
-
-
-//------------------------------------------------ functions -----------------------------------------------------
+function askAQuestion (question, options, noise){
+    if (noise == "Panther"){
+        panther1.play();
+    }
+     setTimeout(question(question, options), 3000);
+    
+}
 
 function startOneCommandArtyom(){
     artyom.fatality();// use this to stop any of
