@@ -22,29 +22,48 @@ var coyote1  = new Howl({
 var testing = {
     indexes:["Play song", "Uzi", "Play some trap"], // These spoken words will trigger the execution of the command
     action:function(){ // Action to be executed when a index match with spoken word
-        artyom.say("Testing sir");
         tester.play();
     }
 };
 
-var panther = {
-    indexes:["panther", "play panther", "panther sound"],
-    action:function(){
-        panther1.play();
-    }
-};
+//var panther = {
+//    indexes:["panther", "play panther", "panther sound"],
+//    action:function(){
+//        panther1.play();
+//    }
+//};
 
 
 //------------------------------------------------ RUNS -----------------------------------------------------
 artyom.addCommands(testing);
 artyom.addCommands(panther); // Add the command with addCommands method. Now
-artyom.say("Welcome to Felipe's Website")
+//artyom.say("Welcome to Felipe's Website")
 //startOneCommandArtyom(); 
 startContinuousArtyom();
 
+artyom.newPrompt ({
+    question: "What animal does that sound?",
+    options: ["Panther", "Black Panther","I don't know" ],
+    beforePrompt: () => {
+        panther1.play();
+    },
+    onMatch: (i) => {
+        var action;
+        if (i == 0){
+            artyom.say("Correct");
+        }
+        else{
+            artyom.say("Incorrect");
+        }
+        
+        return action;
+    }
+    
+    
+    
+})
+
 $( ".row .col-xs-12" ).click(function() {
-//    console.log( "You clicked a play!" );
-//    panther1.play();
    startOneCommandArtyom();    
 });
 
