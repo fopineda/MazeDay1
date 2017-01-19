@@ -26,12 +26,12 @@ var testing = {
     }
 };
 
-//var panther = {
-//    indexes:["panther", "play panther", "panther sound"],
-//    action:function(){
-//        panther1.play();
-//    }
-//};
+var panther = {
+    indexes:["panther", "play panther", "panther sound"],
+    action:function(){
+        panther1.play();
+    }
+};
 
 
 //------------------------------------------------ RUNS -----------------------------------------------------
