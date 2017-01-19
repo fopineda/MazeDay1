@@ -39,7 +39,7 @@ artyom.addCommands(testing);
 artyom.addCommands(panther); // Add the command with addCommands method. Now
 //artyom.say("Welcome to Felipe's Website")
 //startOneCommandArtyom(); 
-startContinuousArtyom();
+
 
 artyom.newPrompt ({
     question: "What animal does that sound?",
@@ -62,6 +62,7 @@ artyom.newPrompt ({
     
     
 })
+startContinuousArtyom();
 
 $( ".row .col-xs-12" ).click(function() {
    startOneCommandArtyom();    
