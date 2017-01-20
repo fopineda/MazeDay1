@@ -36,7 +36,7 @@ var panther = {
 
 //------------------------------------------------ RUNS -----------------------------------------------------
 artyom.addCommands(testing);
-artyom.addCommands(panther); // Add the command with addCommands method. Now
+artyom.addCommands(panther);
 //artyom.say("Welcome to Felipe's Website")
 startContinuousArtyom();
 
@@ -67,9 +67,6 @@ function questioner(myQuestion, myOptions){
         
         return action;
     }
-    
-    
-    
     })
 }
 
@@ -77,39 +74,42 @@ function askAQuestion (question, options, noise){
     if (noise == "Panther"){
         //panther1.play();
     }
-     setTimeout(questioner(question, options), 50000);
+     setTimeout(questioner(question, options), 5000000000);
     
 }
 
 function startOneCommandArtyom(){
-    artyom.fatality();// use this to stop any of
+    artyom.fatality();                              // use this to stop any of
 
-    setTimeout(function(){// if you use artyom.fatality , wait 250 ms to initialize again.
+    setTimeout(function(){                          // if you use artyom.fatality , wait 250 ms to initialize again.
          artyom.initialize({
-            lang:"en-GB",// A lot of languages are supported. Read the docs !
-            continuous:false,// recognize 1 command and stop listening !
-            listen:true, // Start recognizing
-            debug:true, // Show everything in the console
-            speed:1 // talk normally
+            lang:"en-GB",                           // A lot of languages are supported. Read the docs !
+            continuous:false,                       // recognize 1 command and stop listening !
+            listen:true,                            // Start recognizing
+            debug:true,                             // Show everything in the console
+            speed:1                                 // talk normally
         });
     },250);
 }
 
 function endOneCommandArtyom(){
-    artyom.fatality();// use this to stop any of
+    artyom.fatality();                              // use this to stop any of
 }
 
-// This function activates artyom and will listen all that you say forever (requires https conection, otherwise a dialog will request if you allow the use of the microphone)
+/* This function activates artyom and will listen all that you say forever 
+(requires https conection, otherwise a dialog will request if you allow 
+the use of the microphone)
+*/
 function startContinuousArtyom(){
-    artyom.fatality();// use this to stop any of
+    artyom.fatality();                  // use this to stop any of
 
-    setTimeout(function(){// if you use artyom.fatality , wait 250 ms to initialize again.
+    setTimeout(function(){              // if you use artyom.fatality , wait 250 ms to initialize again.
          artyom.initialize({
-            lang:"en-GB",// A lot of languages are supported. Read the docs !
-            continuous:true,// Artyom will listen forever
-            listen:true, // Start recognizing
-            debug:true, // Show everything in the console
-            speed:1 // talk normally
+            lang:"en-GB",               // A lot of languages are supported. Read the docs !
+            continuous:true,            // Artyom will listen forever
+            listen:true,                // Start recognizing
+            debug:true,                 // Show everything in the console
+            speed:1                     // talk normally
         });
     },250);
 }
