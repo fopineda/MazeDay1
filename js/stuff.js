@@ -41,36 +41,20 @@ artyom.addCommands(panther);
 startContinuousArtyom();
 
 
-
-
 //var pantherQuestion = askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
 //var dolphinQuestion = askAQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
 
-var pantherQuestion = new questionItems("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
-askAQuestion(pantherQuestion);
-pantherQuestion.getQ
-
-//var questionsArray = [
-//                    
-//                    ];
+var pantherQuestion = new Question("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
+//askAQuestion(pantherQuestion);
 
 
-$( ".row .col-xs-12" ).click(function() {
-   startOneCommandArtyom();    
-});
+
 
 //artyom.simulateInstruction("panther");
-
-
 //------------------------------------------------ functions -----------------------------------------------------
 
-function playSound(soundish){
-    // Plays Howler sound
-    soundish.play();
-}
-
-// constructor pattern
-function questionItems(myQuestion, myOptions, myNoise){
+// Question Object (constructor pattern)
+function Question(myQuestion, myOptions, myNoise){
     this.question = myQuestion;
     this.options = myOptions;
     this.noise = myNoise;
@@ -78,8 +62,14 @@ function questionItems(myQuestion, myOptions, myNoise){
 
 //var silentQuestion = {pregunta: "What is this animal?", optiono: ["Panther", "Black Panther", "I don't know"], noise: panther1};
 
-function askAQuestion (questionstuff){
-    // It asks a question, istens to answer for options, and then replies with correct or incorrect. 
+function playSound(soundish){
+    // Plays Howler sound
+    soundish.play();
+}
+
+function askAQuestion(questionstuff){
+    // It asks a question, istens to answer for options, and then replies with correct or incorrect.
+    // Parameter is an object
     playSound(questionstuff.noise);
     setTimeout(function(){
         artyom.newPrompt ({
