@@ -102,7 +102,7 @@ function askQuestion(questionstuff){
         onMatch: (i) => {
         var action;
         if (i == 0){
-            artyom.say("Let's do it then");
+            artyom.say("Go ahead");
         }
         else{
             artyom.say("No");
