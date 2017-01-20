@@ -74,7 +74,22 @@ function askAQuestion (question, options, noise){
     if (noise == "Panther"){
         //panther1.play();
     }
-     setTimeout(questioner(question, options), 3000);
+     setTimeout(function(){
+    artyom.newPrompt ({
+    question: myQuestion,
+    options: myOptions,
+    onMatch: (i) => {
+        var action;
+        if (i == 0){
+            artyom.say("Correct");
+        }
+        else{
+            artyom.say("Incorrect");
+        }
+        
+        return action;
+    }
+    })}, 3000);
     
 }
 
