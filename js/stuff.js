@@ -41,33 +41,30 @@ artyom.addCommands(panther);
 startContinuousArtyom();
 
 
-//var pantherQuestion = askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
-//var dolphinQuestion = askAQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
+var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
+var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
 
-var pantherQuestion = new Question("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
-//askAQuestion(pantherQuestion);
+var questionsList = [
+    pantherQuestion,
+    dolphinQuestion
+]
 
+testGame();
 
+//askSoundQuestion(pantherQuestion);
 
 
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
 
 // Question Object (constructor pattern)
-function Question(myQuestion, myOptions, myNoise){
+function SoundQuestion(myQuestion, myOptions, myNoise){
     this.question = myQuestion;
     this.options = myOptions;
     this.noise = myNoise;
 }
 
-//var silentQuestion = {pregunta: "What is this animal?", optiono: ["Panther", "Black Panther", "I don't know"], noise: panther1};
-
-function playSound(soundish){
-    // Plays Howler sound
-    soundish.play();
-}
-
-function askAQuestion(questionstuff){
+function askSoundQuestion(questionstuff){
     // It asks a question, istens to answer for options, and then replies with correct or incorrect.
     // Parameter is an object
     playSound(questionstuff.noise);
@@ -90,6 +87,46 @@ function askAQuestion(questionstuff){
     
 }
 
+function Question(myQuestion, myOptions){
+    this.question = myQuestion;
+    this.options = myOptions;
+}
+
+function askQuestion(questionstuff){
+    // It asks a question, istens to answer for options, and then replies with correct or incorrect.
+    // Parameter is an object
+    setTimeout(function(){
+        artyom.newPrompt ({
+        question: questionstuff.question,
+        options: questionstuff.options,
+        onMatch: (i) => {
+        var action;
+        if (i == 0){
+            artyom.say("Let's do it then");
+        }
+        else{
+            artyom.say("No");
+        }
+
+        return action;
+        }
+        })}, 3000);
+    
+}
+
+function playSound(soundish){
+    // Plays Howler sound
+    soundish.play();
+}
+
+
+function testGame(){
+    var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
+    var beginingQuestion = new Question("Are you ready to begin?" ["Yes Please", "No Please"]);
+    askQuestion(beginingQuestion);
+    
+}
+
 function startOneCommandArtyom(){
     artyom.fatality();                              // use this to stop any of
 
@@ -108,11 +145,9 @@ function endOneCommandArtyom(){
     artyom.fatality();                              // use this to stop any of
 }
 
-/* This function activates artyom and will listen all that you say forever 
-(requires https conection, otherwise a dialog will request if you allow 
-the use of the microphone)
-*/
+
 function startContinuousArtyom(){
+    // starts Artyom and listens forever (assuming you have https connection).
     artyom.fatality();                  // use this to stop any of
 
     setTimeout(function(){              // if you use artyom.fatality , wait 250 ms to initialize again.
