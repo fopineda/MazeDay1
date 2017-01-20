@@ -19,13 +19,13 @@ var coyote1  = new Howl({
     src: ['coyote3.mp3']
 })
 
+// MIGHT NOT NEED THIS
 var testing = {
     indexes:["Play song", "Uzi", "Play some trap"], // These spoken words will trigger the execution of the command
     action:function(){ // Action to be executed when a index match with spoken word
         tester.play();
     }
 };
-
 var panther = {
     indexes:["panther", "play panther", "panther sound"],
     action:function(){
@@ -41,8 +41,13 @@ artyom.addCommands(panther);
 startContinuousArtyom();
 
 
-askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
-askAQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
+
+
+pantherQuestion = askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
+dolphinQuestion = askAQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
+
+var questionsArray = [pantherQuestion, dolphinQuestion];
+
 
 $( ".row .col-xs-12" ).click(function() {
    startOneCommandArtyom();    
