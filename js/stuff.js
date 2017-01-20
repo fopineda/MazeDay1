@@ -40,9 +40,9 @@ artyom.addCommands(panther);
 //artyom.say("Welcome to Felipe's Website")
 startContinuousArtyom();
 
-//fubar(dolphin1);
-//askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], "Panther");
-askAQuestion("hello is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
+
+askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], Panther);
+askAQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
 
 $( ".row .col-xs-12" ).click(function() {
    startOneCommandArtyom();    
@@ -54,10 +54,12 @@ $( ".row .col-xs-12" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 
 function playSound(soundish){
+    // Plays Howler sound
     soundish.play();
 }
 
 function askAQuestion (question, options, noise){
+    // It asks a question, istens to answer for options, and then replies with correct or incorrect. 
     playSound(noise);
     setTimeout(function(){
         artyom.newPrompt ({
