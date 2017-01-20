@@ -58,7 +58,7 @@ function playSound(soundish){
 }
 
 function askAQuestion (question, options, noise){
-    playSound(noise);
+    noise.play();
     setTimeout(function(){
         artyom.newPrompt ({
         question: question,
