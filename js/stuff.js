@@ -46,8 +46,9 @@ startContinuousArtyom();
 //var pantherQuestion = askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
 //var dolphinQuestion = askAQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
 
-var pantherQuestion = questionItems("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
+var pantherQuestion = new questionItems("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
 askAQuestion(pantherQuestion);
+pantherQuestion.getQ
 
 //var questionsArray = [
 //                    
@@ -73,27 +74,17 @@ function questionItems(myQuestion, myOptions, myNoise){
     this.question = myQuestion;
     this.options = myOptions;
     this.noise = myNoise;
-    
-    this.getQuestion = function(){
-        return question;
-    }
-    this.getOptions = function(){
-        return options;
-    }
-    this.getNoise = function(){
-        return noise;
-    }
 }
 
 //var silentQuestion = {pregunta: "What is this animal?", optiono: ["Panther", "Black Panther", "I don't know"], noise: panther1};
 
 function askAQuestion (questionstuff){
     // It asks a question, istens to answer for options, and then replies with correct or incorrect. 
-    playSound(questionstuff.getNoise);
+    playSound(questionstuff.noise);
     setTimeout(function(){
         artyom.newPrompt ({
-        question: questionstuff.getQuestion,
-        options: questionstuff.getOptions,
+        question: questionstuff.question,
+        options: questionstuff.options,
         onMatch: (i) => {
         var action;
         if (i == 0){
