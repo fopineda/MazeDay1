@@ -74,7 +74,7 @@ function askAQuestion (question, options, noise){
     if (noise == "Panther"){
         //panther1.play();
     }
-     setTimeout(questioner(question, options), 5000000000);
+     setTimeout(questioner(question, options), 3000);
     
 }
 
