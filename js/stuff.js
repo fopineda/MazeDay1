@@ -76,8 +76,8 @@ function askAQuestion (question, options, noise){
     }
      setTimeout(function(){
     artyom.newPrompt ({
-    question: myQuestion,
-    options: myOptions,
+    question: question,
+    options: options,
     onMatch: (i) => {
         var action;
         if (i == 0){
