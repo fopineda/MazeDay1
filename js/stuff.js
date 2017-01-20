@@ -49,9 +49,9 @@ var questionsList = [
     dolphinQuestion
 ]
 
-//testGame();
+testGame();
 
-askSoundQuestion(pantherQuestion);
+//askSoundQuestion(pantherQuestion);
 
 
 //artyom.simulateInstruction("panther");
@@ -86,19 +86,19 @@ function askSoundQuestion(questionstuff){
         })}, 3000);
     
 }
-// Question Object
+// Question Object (For simple questions)
 function Question(myQuestion, myOptions){
     this.question = myQuestion;
     this.options = myOptions;
 }
 // Question
-function askQuestion(questionstuff){
+function askQuestion(simple){
     // It asks a question, istens to answer for options, and then replies with correct or incorrect.
     // Parameter is an object
     setTimeout(function(){
         artyom.newPrompt ({
-        question: questionstuff.question,
-        options: questionstuff.options,
+        question: simple.question,
+        options: simple.options,
         onMatch: (i) => {
         var action;
         if (i == 0){
