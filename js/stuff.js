@@ -104,6 +104,7 @@ function askQuestion(simple){
         }
         else{
             artyom.say("Go Away then");
+            artyom.fatality();                  
         }
 
         return action;
