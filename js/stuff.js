@@ -57,8 +57,9 @@ testGame();
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
 
-// SoundQuestion Object (constructor pattern)
+// SoundQuestion Object (For questions requiring sound before asking question)
 function SoundQuestion(myQuestion, myOptions, myNoise){
+    // (constructor pattern)
     this.soundQuestion = myQuestion;
     this.soundOptions = myOptions;
     this.soundNoise = myNoise;
@@ -102,10 +103,10 @@ function askQuestion(simple){
         onMatch: (i) => {
         var action;
         if (i == 0){
-            artyom.say("Go ahead");
+            artyom.say("Alright let's begin");
         }
         else{
-            artyom.say("No");
+            artyom.say("Go Away then");
         }
 
         return action;
@@ -124,6 +125,7 @@ function testGame(){
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
     var beginingQuestion = new Question("Are you ready to begin?", ["Yes Please", "No Please"]);
     askQuestion(beginingQuestion);
+    setTimeout(askSoundQuestion.bind(null, dogQuestion),9000);
     
 }
 
