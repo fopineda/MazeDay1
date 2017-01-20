@@ -38,7 +38,6 @@ var panther = {
 artyom.addCommands(testing);
 artyom.addCommands(panther); // Add the command with addCommands method. Now
 //artyom.say("Welcome to Felipe's Website")
-//startOneCommandArtyom(); 
 startContinuousArtyom();
 
 askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], "Panther");
@@ -76,7 +75,7 @@ function questioner(myQuestion, myOptions){
 
 function askAQuestion (question, options, noise){
     if (noise == "Panther"){
-        panther1.play();
+        //panther1.play();
     }
      setTimeout(questioner(question, options), 50000);
     
