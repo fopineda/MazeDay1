@@ -49,9 +49,9 @@ var questionsList = [
     dolphinQuestion
 ]
 
-testGame();
+//testGame();
 
-//askSoundQuestion(pantherQuestion);
+askSoundQuestion(pantherQuestion);
 
 
 //artyom.simulateInstruction("panther");
