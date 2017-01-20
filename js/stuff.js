@@ -122,7 +122,7 @@ function playSound(soundish){
 
 function testGame(){
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
-    var beginingQuestion = new Question("Are you ready to begin?" ["Yes Please", "No Please"]);
+    var beginingQuestion = new Question("Are you ready to begin?", ["Yes Please", "No Please"]);
     askQuestion(beginingQuestion);
     
 }
