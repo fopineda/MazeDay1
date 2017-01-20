@@ -125,7 +125,7 @@ function testGame(){
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
     var beginingQuestion = new Question("Are you ready to begin?", ["Yes Please", "No Please"]);
     askQuestion(beginingQuestion);
-    setTimeout(askSoundQuestion.bind(null, dogQuestion),9000);
+    setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
     
 }
 
