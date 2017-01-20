@@ -42,7 +42,7 @@ startContinuousArtyom();
 
 //fubar(dolphin1);
 //askAQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], "Panther");
-askAQuestion("hello is this animal?", ["Dolphin", "A Dolphin", "I don't know"], "Dolphin");
+askAQuestion("hello is this animal?", ["Dolphin", "A Dolphin", "I don't know"], "dolphin1");
 
 $( ".row .col-xs-12" ).click(function() {
    startOneCommandArtyom();    
