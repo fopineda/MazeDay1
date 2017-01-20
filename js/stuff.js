@@ -57,21 +57,21 @@ testGame();
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
 
-// Question Object (constructor pattern)
+// SoundQuestion Object (constructor pattern)
 function SoundQuestion(myQuestion, myOptions, myNoise){
-    this.question = myQuestion;
-    this.options = myOptions;
-    this.noise = myNoise;
+    this.soundQuestion = myQuestion;
+    this.soundOptions = myOptions;
+    this.soundNoise = myNoise;
 }
-
+// SoundQuestion
 function askSoundQuestion(questionstuff){
     // It asks a question, istens to answer for options, and then replies with correct or incorrect.
     // Parameter is an object
-    playSound(questionstuff.noise);
+    playSound(questionstuff.soundNoise);
     setTimeout(function(){
         artyom.newPrompt ({
-        question: questionstuff.question,
-        options: questionstuff.options,
+        question: questionstuff.soundQuestion,
+        options: questionstuff.soundOptions,
         onMatch: (i) => {
         var action;
         if (i == 0){
@@ -86,12 +86,12 @@ function askSoundQuestion(questionstuff){
         })}, 3000);
     
 }
-
+// Question Object
 function Question(myQuestion, myOptions){
     this.question = myQuestion;
     this.options = myOptions;
 }
-
+// Question
 function askQuestion(questionstuff){
     // It asks a question, istens to answer for options, and then replies with correct or incorrect.
     // Parameter is an object
