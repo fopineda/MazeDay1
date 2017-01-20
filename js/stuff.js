@@ -37,7 +37,6 @@ var panther = {
 //------------------------------------------------ RUNS -----------------------------------------------------
 artyom.addCommands(testing);
 artyom.addCommands(panther);
-//artyom.say("Welcome to Felipe's Website")
 startContinuousArtyom();
 
 
@@ -52,8 +51,6 @@ var questionsList = [
 testGame();
 
 //askSoundQuestion(pantherQuestion);
-
-
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
 
@@ -120,7 +117,7 @@ function playSound(soundish){
     soundish.play();
 }
 
-
+// FOR TESTING PURPOSES
 function testGame(){
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
     var beginingQuestion = new Question("Are you ready to begin?", ["Yes Please", "No Please"]);
