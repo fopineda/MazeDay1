@@ -72,7 +72,7 @@ function questioner(myQuestion, myOptions){
 
 function askAQuestion (question, options, noise){
     if (noise == "Panther"){
-        //panther1.play();
+        panther1.play();
     }
      setTimeout(function(){
     artyom.newPrompt ({
