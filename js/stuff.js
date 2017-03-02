@@ -48,17 +48,12 @@ var questionsList = [
     dolphinQuestion
 ]
 
-testGame();
 
 
-$( "#something" ).hover(
-  function() {
-    $( this ).addClass( "hover" );
-  }, 
-  function() {
-    $( this ).removeClass( "hover" );
-  }
-);
+
+$( "#something" ).click(function() {
+    testGame();
+});
 
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
