@@ -50,6 +50,16 @@ var questionsList = [
 
 testGame();
 
+
+$( "#something" ).hover(
+  function() {
+    $( this ).addClass( "hover" );
+  }, 
+  function() {
+    $( this ).removeClass( "hover" );
+  }
+);
+
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
