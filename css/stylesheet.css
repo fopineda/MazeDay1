@@ -39,7 +39,8 @@ html, body{
 #something {
     text-align: center;
     font-family: monospace;
-    font-size: 500%;
+    font-size: 400%;
+    line-height: 1.5;
 }
 
 
