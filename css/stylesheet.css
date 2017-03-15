@@ -12,11 +12,7 @@ html, body{
     /*background-color: aqua*/
     
 }
-.row .col-xs-4{
-    height: 100px;
-    /*background-color: aqua*/
-    
-}
+
 
 #something : hover{
     background-color: orange;
