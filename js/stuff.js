@@ -37,7 +37,7 @@ var panther = {
 //------------------------------------------------ RUNS -----------------------------------------------------
 artyom.addCommands(testing);
 artyom.addCommands(panther);
-
+startContinuousArtyom();
 
 
 var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
@@ -58,7 +58,7 @@ $( "#something" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // FOR TESTING PURPOSES
 function testGame(){
-    startContinuousArtyom();
+    
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
     var beginingQuestion = new Question("Are you ready to begin?", ["Yes", "No"]);
     askQuestion(beginingQuestion);
@@ -127,7 +127,9 @@ function askQuestion(simple){
         if (i == 1){
             action = () => {
                artyom.say("Go Away then");
-               artyom.fatality();  
+               setTimeout(function(){
+                  artyom.fatality(); 
+               }, 1000);  
             }
             
 
