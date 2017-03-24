@@ -118,7 +118,7 @@ function askQuestion(simple){
         options: simple.options,
         onMatch: (i) => {
         var action;
-        var bool
+        var bool;
         if (i == 0){
             artyom.say("Alright let's begin");
             bool = true;
