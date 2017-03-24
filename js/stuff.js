@@ -127,7 +127,7 @@ function askQuestion(simple){
         }
         if (i == 1){
             action = () => {
-               artyom.say("Go Away then");
+               //artyom.say("Go Away then");
                artyom.fatality();  
             }
             
