@@ -49,8 +49,6 @@ var questionsList = [
 ]
 
 
-
-
 $( "#something" ).click(function() {
     testGame();
 });
@@ -58,6 +56,19 @@ $( "#something" ).click(function() {
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
+// FOR TESTING PURPOSES
+function testGame(){
+    var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
+    var beginingQuestion = new Question("Are you ready to begin?", ["Yes Please", "No Please"]);
+    var  what = askQuestion(beginingQuestion);
+    if (what == false){
+        artyom.fatality();  
+    }
+    
+    setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
+    
+}
+
 
 // SoundQuestion Object (For questions requiring sound before asking question)
 function SoundQuestion(myQuestion, myOptions, myNoise){
@@ -68,7 +79,7 @@ function SoundQuestion(myQuestion, myOptions, myNoise){
 }
 // SoundQuestion
 function askSoundQuestion(questionstuff){
-    // It asks a question, istens to answer for options, and then replies with correct or incorrect.
+    // It asks a question, listens to answer for options, and then replies with correct or incorrect.
     // Parameter is an object
     playSound(questionstuff.soundNoise);
     setTimeout(function(){
@@ -89,7 +100,7 @@ function askSoundQuestion(questionstuff){
         })}, 3000);
     
 }
-// Question Object (For simple questions)
+// Question Object (For simple non-sounding questions)
 function Question(myQuestion, myOptions){
     this.question = myQuestion;
     this.options = myOptions;
@@ -104,15 +115,18 @@ function askQuestion(simple){
         options: simple.options,
         onMatch: (i) => {
         var action;
+        var bool
         if (i == 0){
             artyom.say("Alright let's begin");
+            bool = true;
         }
         else{
             artyom.say("Go Away then");
-            artyom.fatality();                  
+            //artyom.fatality(); 
+            bool = false;
         }
 
-        return action;
+        return bool;
         }
         })}, 3000);
     
@@ -123,14 +137,7 @@ function playSound(soundish){
     soundish.play();
 }
 
-// FOR TESTING PURPOSES
-function testGame(){
-    var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
-    var beginingQuestion = new Question("Are you ready to begin?", ["Yes Please", "No Please"]);
-    askQuestion(beginingQuestion);
-    setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
-    
-}
+
 
 function startOneCommandArtyom(){
     artyom.fatality();                              // use this to stop any of
