@@ -50,7 +50,8 @@ var questionsList = [
 
 
 $( "#something" ).click(function() {
-    testGame();
+    //testGame();
+    artyom.fatality(); 
 });
 
 //askSoundQuestion(pantherQuestion);
@@ -127,9 +128,7 @@ function askQuestion(simple){
         if (i == 1){
             action = () => {
                artyom.say("Go Away then");
-               setTimeout(function(){
-                  artyom.fatality(); 
-               }, 1000);  
+               artyom.fatality();  
             }
             
 
