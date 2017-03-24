@@ -64,8 +64,11 @@ function testGame(){
     if (what == false){
         artyom.fatality();  
     }
+    else {
+        setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
+    }
     
-    setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
+    
     
 }
 
