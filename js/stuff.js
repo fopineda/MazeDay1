@@ -59,14 +59,14 @@ $( "#something" ).click(function() {
 // FOR TESTING PURPOSES
 function testGame(){
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
-    var beginingQuestion = new Question("Are you ready to begin?", ["Yes Please", "No Please"]);
+    var beginingQuestion = new Question("Are you ready to begin?", ["Yes", "No"]);
     var  what = askQuestion(beginingQuestion);
     if (what == false){
         artyom.fatality();  
     }
     else{
     setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
-    
+    }
     
     
     
