@@ -66,7 +66,7 @@ function testGame(){
     }
     else{
     setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
-    }
+    
     
     
     
@@ -131,7 +131,7 @@ function askQuestion(simple){
             
         }
 
-        return [action, bool];
+        return bool;
         }
         })}, 3000);
     
