@@ -75,7 +75,7 @@ function runQuiz(){
     
     var i;
     for (i = 0; i < 3; i++){
-        await sleep(12000);
+        sleep(12000);
         setTimeout(askSoundQuestion.bind(null, questionList[i]), 12000); 
     }
    //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
