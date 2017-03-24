@@ -61,7 +61,7 @@ function testGame(){
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
     var beginingQuestion = new Question("Are you ready to begin?", ["Yes Please", "No Please"]);
     var  what = askQuestion(beginingQuestion);
-    if (what == false){
+    if (what[1] == false){
         artyom.fatality();  
     }
     setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
@@ -117,20 +117,19 @@ function askQuestion(simple){
         options: simple.options,
         onMatch: (i) => {
         var action;
-        var bool;
+        var bool = false;
         if (i == 0){
             artyom.say("Alright let's begin");
             bool = true;
-            return bool;
         }
         else{
             artyom.say("Go Away then");
             //artyom.fatality(); 
             bool = false;
-            return bool;
+            
         }
 
-        //return bool;
+        return [action, bool];
         }
         })}, 3000);
     
