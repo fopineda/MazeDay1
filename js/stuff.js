@@ -60,7 +60,7 @@ $( "#something" ).click(function() {
 function testGame(){
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
     var beginingQuestion = new Question("Are you ready to begin?", ["Yes", "No"]);
-    var  what = askQuestion(beginingQuestion);
+    askQuestion(beginingQuestion);
     
     setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
     
@@ -116,15 +116,20 @@ function askQuestion(simple){
         options: simple.options,
         onMatch: (i) => {
         var action;
-        //var bool = false;
         if (i == 0){
-            artyom.say("Alright let's begin");
-            //bool = true;
+            action = () => {
+                artyom.say("Alright let's begin");
+            }
+            
+
         }
-        else{
-            artyom.say("Go Away then");
-            //artyom.fatality(); 
-            //bool = false;
+        if (i == 1){
+            action = () => {
+               artyom.say("Go Away then");
+               artyom.fatality();  
+            }
+            
+
             
         }
 
