@@ -42,12 +42,11 @@ startContinuousArtyom();
 
 var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
 var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
-
-
+var counter = 0;
 
 
 $( "#something" ).click(function() {
-    testGame();
+    beginGame();
     //artyom.fatality(); 
 });
 
@@ -55,14 +54,13 @@ $( "#something" ).click(function() {
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
 // FOR TESTING PURPOSES
-function testGame(){
+function beginGame(){
     var beginingQuestion = new Question("Are you ready to begin?", ["Yes", "No"]);
     askQuestion(beginingQuestion);
-    
-
 }
 
-function runQuiz(){
+function runQuiz(index){
+    
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
@@ -73,18 +71,9 @@ function runQuiz(){
         dogQuestion,
     ]
     
-    var i;
-    for (i = 0; i < 3; i++){
-        //sleep(12000);
-        //console.log("yo");
-        setTimeout(askSoundQuestion.bind(null, questionsList[i]), 12000); 
-    }
+    askSoundQuestion(questionList[index]);
    //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
-   //setTimeout(askSoundQuestion.bind(null, pantherQuestion), 12000);
-   //setTimeout(askSoundQuestion.bind(null, dolphinQuestion), 12000);
 }
-
-
 
 // SoundQuestion Object (For questions requiring sound before asking question)
 function SoundQuestion(myQuestion, myOptions, myNoise){
@@ -107,12 +96,17 @@ function askSoundQuestion(questionstuff){
         if (i == 0){
             action = () => {
                 artyom.say("Correct");
+                counter = counter + 1;
+                askSoundQuestions(counter)
+                
             }
+            
         }
         else{
             action = () => {
                 artyom.say("Incorrect");
             }
+            askSoundQuestion(questionstuff);
         }
 
         return action;
@@ -138,7 +132,7 @@ function askQuestion(simple){
         if (i == 0){
             action = () => {
                 artyom.say("Alright let's begin");
-                runQuiz();
+                runQuiz(counter);
             }
             
 
@@ -180,11 +174,6 @@ function startOneCommandArtyom(){
 
 function endOneCommandArtyom(){
     artyom.fatality();                              // use this to stop any of
-}
-
-
-function sleep(ms){
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function startContinuousArtyom(){
