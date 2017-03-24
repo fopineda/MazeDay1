@@ -60,17 +60,24 @@ $( "#something" ).click(function() {
 // FOR TESTING PURPOSES
 function testGame(){
     
-    var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
+    
     var beginingQuestion = new Question("Are you ready to begin?", ["Yes", "No"]);
     askQuestion(beginingQuestion);
     
-    setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
+    //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000);
     
-    
-    
-    
-    
+
 }
+
+function runQuiz(){
+    var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
+    var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
+    var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
+   setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
+   setTimeout(askSoundQuestion.bind(null, pantherQuestion), 12000);
+   setTimeout(askSoundQuestion.bind(null, dolphinQuestion), 12000);
+}
+
 
 
 // SoundQuestion Object (For questions requiring sound before asking question)
@@ -121,6 +128,7 @@ function askQuestion(simple){
         if (i == 0){
             action = () => {
                 artyom.say("Alright let's begin");
+                runQuiz();
             }
             
 
@@ -128,8 +136,8 @@ function askQuestion(simple){
         if (i == 1){
             action = () => {
                artyom.say("Go Away then");
-               //artyom.fatality(); 
-                artyom.simulateInstruction("Shut down yourself");
+               artyom.fatality(); 
+                
             }
             
 
