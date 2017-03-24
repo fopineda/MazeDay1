@@ -50,8 +50,8 @@ var questionsList = [
 
 
 $( "#something" ).click(function() {
-    //testGame();
-    artyom.fatality(); 
+    testGame();
+    //artyom.fatality(); 
 });
 
 //askSoundQuestion(pantherQuestion);
