@@ -97,6 +97,7 @@ function askSoundQuestion(questionstuff){
                 artyom.say("Correct");
                 counter = counter + 1;
                 runQuiz(counter);
+                // out of bounds error probably, check later??
                 
             }
             
