@@ -60,7 +60,6 @@ function beginGame(){
 }
 
 function runQuiz(index){
-    
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
@@ -97,7 +96,7 @@ function askSoundQuestion(questionstuff){
             action = () => {
                 artyom.say("Correct");
                 counter = counter + 1;
-                askSoundQuestions(counter)
+                runQuiz(counter);
                 
             }
             
@@ -134,8 +133,6 @@ function askQuestion(simple){
                 artyom.say("Alright let's begin");
                 runQuiz(counter);
             }
-            
-
         }
         if (i == 1){
             action = () => {
