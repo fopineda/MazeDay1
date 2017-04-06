@@ -73,7 +73,7 @@ function runQuiz(index){
         dogQuestion,
     ]
     
-    askSoundQuestion(questionList[index]);
+    askSoundQuestion(questionsList[index]);
    //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
 }
 
