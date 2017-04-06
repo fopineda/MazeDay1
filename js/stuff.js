@@ -50,6 +50,9 @@ $( "#something" ).click(function() {
     //artyom.fatality(); 
 });
 
+
+
+
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
