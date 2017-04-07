@@ -136,10 +136,8 @@ function askSoundQuestion(questionstuff){
                 else{
                    instrumentsQuiz(counter); 
                 }
-                // out of bounds error probably, check later??
-                
-            }
-            
+                // out of bounds error probably, check later??  
+            }   
         }
         else{
             action = () => {
@@ -147,7 +145,6 @@ function askSoundQuestion(questionstuff){
             }
             askSoundQuestion(questionstuff);
         }
-
         return action;
         }
         })}, 3000);
