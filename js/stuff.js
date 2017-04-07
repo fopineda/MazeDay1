@@ -55,6 +55,8 @@ startContinuousArtyom();
 var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
 var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
 var counter = 0;
+var animals = false;
+var instruments = false;
 
 beginGame();
 
@@ -76,6 +78,7 @@ function beginGame(){
 }
 
 function animalsQuiz(index){
+    
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
@@ -127,7 +130,12 @@ function askSoundQuestion(questionstuff){
             action = () => {
                 artyom.say("Correct");
                 counter = counter + 1;
-                runQuiz(counter);
+                if (animals == true){
+                    animalsQuiz(counter);
+                }
+                else{
+                   instrumentsQuiz(counter); 
+                }
                 // out of bounds error probably, check later??
                 
             }
@@ -163,6 +171,7 @@ function askQuestion(simple){
         if (i == 0){
             action = () => {
                 artyom.say("Alright let's begin");
+                animals = true;
                 animalsQuiz(counter);
             }
         }
@@ -170,6 +179,7 @@ function askQuestion(simple){
             action = () => {
                artyom.say("Alright let's begin");
                //artyom.fatality();
+                instruments = true;
                 instrumentsQuiz(counter);
                 
             } 
