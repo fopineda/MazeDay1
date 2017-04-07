@@ -39,32 +39,4 @@ html, body{
     line-height: 1.5;
 }
 
-.row .col-xs-12 #Animals {
-    text-align: center;
-    font-family: monospace;
-    font-size: 400%;
-    line-height: 1.5;
-}
-
-#Instruments {
-    text-align: center;
-    font-family: monospace;
-    font-size: 400%;
-    line-height: 1.5;
-}
-
-#Alerts {
-    text-align: center;
-    font-family: monospace;
-    font-size: 400%;
-    line-height: 1.5;
-}
-
-#Streets {
-    text-align: center;
-    font-family: monospace;
-    font-size: 400%;
-    line-height: 1.5;
-}
-
 
