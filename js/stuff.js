@@ -44,6 +44,7 @@ var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Bla
 var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
 var counter = 0;
 
+beginGame();
 
 $( "#something" ).click(function() {
     beginGame();
