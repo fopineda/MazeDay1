@@ -73,7 +73,7 @@ $( "#something" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // FOR TESTING PURPOSES
 function beginGame(){
-    var beginingQuestion = new Question("We have Animals and Intruments sounds, which would you like?", ["Animals", "Instruments"]);
+    var beginingQuestion = new Question("We have Animals and Instruments sounds, which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
@@ -89,7 +89,8 @@ function animalsQuiz(index){
         dogQuestion,
     ]
     
-    askSoundQuestion(questionsList[index]);
+    //askSoundQuestion(questionsList[index]);
+    setTimeout(askSoundQuestion(questionsList[index]), 3000);
    //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
 }
 
@@ -104,7 +105,8 @@ function instrumentsQuiz(index){
         trumpetQuestion,
     ]
     
-    askSoundQuestion(questionsList[index]);
+    //askSoundQuestion(questionsList[index]);
+    setTimeout(askSoundQuestion(questionsList[index]), 3000);
    //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
 }
 
