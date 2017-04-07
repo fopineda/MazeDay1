@@ -93,7 +93,7 @@ function animalsQuiz(index){
 function instrumentsQuiz(index){
     //var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var drumsQuestion = new SoundQuestion("What the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
-    var harpsQuestion = new SoundQuestion("What the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], Harp1);
+    var harpsQuestion = new SoundQuestion("What the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], harp1);
     var trumpetQuestion = new SoundQuestion("What the instrument that plays this sound?", ["trumpet", "trumpets", "I don't know"], trumpet1);
     var questionsList = [
         drumsQuestion,
