@@ -97,7 +97,7 @@ function instrumentsQuiz(index){
     var trumpetQuestion = new SoundQuestion("What the instrument that plays this sound?", ["trumpet", "trumpets", "I don't know"], trumpet1);
     var questionsList = [
         drumsQuestion,
-        HarpsQuestion,
+        harpsQuestion,
         trumpetQuestion,
     ]
     
