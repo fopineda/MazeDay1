@@ -73,7 +73,7 @@ $( "#something" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // FOR TESTING PURPOSES
 function beginGame(){
-    var beginingQuestion = new Question("We have Animals and Instruments sounds, which would you like to hear?", ["Animals", "Instruments"]);
+    var beginingQuestion = new Question("We have Animals and Instruments sounds which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
@@ -90,15 +90,15 @@ function animalsQuiz(index){
     ]
     
     //askSoundQuestion(questionsList[index]);
-    setTimeout(askSoundQuestion(questionsList[index]), 3000);
+    setTimeout(askSoundQuestion(questionsList[index]), 12000);
    //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
 }
 
 function instrumentsQuiz(index){
     //var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
-    var drumsQuestion = new SoundQuestion("What the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
-    var harpsQuestion = new SoundQuestion("What the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], harp1);
-    var trumpetQuestion = new SoundQuestion("What the instrument that plays this sound?", ["trumpet", "trumpets", "I don't know"], trumpet1);
+    var drumsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
+    var harpsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], harp1);
+    var trumpetQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["trumpet", "trumpets", "I don't know"], trumpet1);
     var questionsList = [
         drumsQuestion,
         harpsQuestion,
@@ -106,7 +106,7 @@ function instrumentsQuiz(index){
     ]
     
     //askSoundQuestion(questionsList[index]);
-    setTimeout(askSoundQuestion(questionsList[index]), 3000);
+    setTimeout(askSoundQuestion(questionsList[index]), 12000);
    //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
 }
 
