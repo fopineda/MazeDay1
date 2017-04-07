@@ -73,7 +73,8 @@ $( "#something" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // FOR TESTING PURPOSES
 function beginGame(){
-    var beginingQuestion = new Question("We have Animals and Instruments sounds which would you like to hear?", ["Animals", "Instruments"]);
+    artyom.say("We have Animals and Instruments sounds");
+    var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
@@ -90,8 +91,8 @@ function animalsQuiz(index){
     ]
     
     //askSoundQuestion(questionsList[index]);
-    setTimeout(askSoundQuestion(questionsList[index]), 12000);
-   //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
+   // setTimeout(askSoundQuestion(questionsList[index]), 12000);
+   setTimeout(askSoundQuestion.bind(null, questionsList[index]), 12000); 
 }
 
 function instrumentsQuiz(index){
@@ -106,8 +107,8 @@ function instrumentsQuiz(index){
     ]
     
     //askSoundQuestion(questionsList[index]);
-    setTimeout(askSoundQuestion(questionsList[index]), 12000);
-   //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
+    //setTimeout(askSoundQuestion(questionsList[index]), 12000);
+    setTimeout(askSoundQuestion.bind(null, questionsList[index]), 12000); 
 }
 
 // SoundQuestion Object (For questions requiring sound before asking question)
