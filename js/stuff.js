@@ -92,7 +92,7 @@ function animalsQuiz(index){
     
     //askSoundQuestion(questionsList[index]);
    // setTimeout(askSoundQuestion(questionsList[index]), 12000);
-   setTimeout(askSoundQuestion.bind(null, questionsList[index]), 12000); 
+   setTimeout(askSoundQuestion.bind(null, questionsList[index]), 6000); 
 }
 
 function instrumentsQuiz(index){
@@ -108,7 +108,7 @@ function instrumentsQuiz(index){
     
     //askSoundQuestion(questionsList[index]);
     //setTimeout(askSoundQuestion(questionsList[index]), 12000);
-    setTimeout(askSoundQuestion.bind(null, questionsList[index]), 12000); 
+    setTimeout(askSoundQuestion.bind(null, questionsList[index]), 6000); 
 }
 
 // SoundQuestion Object (For questions requiring sound before asking question)
