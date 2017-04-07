@@ -39,7 +39,7 @@ html, body{
     line-height: 1.5;
 }
 
-#Animals {
+.row .col-xs-12 #Animals {
     text-align: center;
     font-family: monospace;
     font-size: 400%;
