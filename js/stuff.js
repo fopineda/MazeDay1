@@ -19,6 +19,18 @@ var coyote1  = new Howl({
     src: ['coyote3.mp3']
 })
 
+var drums1  = new Howl({
+    src: ['drums1.mp3']
+})
+
+var harp1  = new Howl({
+    src: ['Harp1.wav']
+})
+
+var trumpet1  = new Howl({
+    src: ['trumpet1.wav']
+})
+
 // MIGHT NOT NEED THIS
 var testing = {
     indexes:["Play song", "Uzi", "Play some trap"], // These spoken words will trigger the execution of the command
@@ -59,11 +71,11 @@ $( "#something" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // FOR TESTING PURPOSES
 function beginGame(){
-    var beginingQuestion = new Question("Are you ready to begin?", ["Yes", "No"]);
+    var beginingQuestion = new Question("We have Animals and Intruments sounds, which would you like?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
-function runQuiz(index){
+function animalsQuiz(index){
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
@@ -72,6 +84,21 @@ function runQuiz(index){
         pantherQuestion,
         dolphinQuestion,
         dogQuestion,
+    ]
+    
+    askSoundQuestion(questionsList[index]);
+   //setTimeout(askSoundQuestion.bind(null, dogQuestion), 12000); 
+}
+
+function instrumentsQuiz(index){
+    //var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
+    var drumsQuestion = new SoundQuestion("What the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
+    var harpsQuestion = new SoundQuestion("What the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], Harp1);
+    var trumpetQuestion = new SoundQuestion("What the instrument that plays this sound?", ["trumpet", "trumpets", "I don't know"], trumpet1);
+    var questionsList = [
+        drumsQuestion,
+        HarpsQuestion,
+        trumpetQuestion,
     ]
     
     askSoundQuestion(questionsList[index]);
@@ -136,13 +163,14 @@ function askQuestion(simple){
         if (i == 0){
             action = () => {
                 artyom.say("Alright let's begin");
-                runQuiz(counter);
+                animalsQuiz(counter);
             }
         }
         if (i == 1){
             action = () => {
-               artyom.say("Go Away then");
-               artyom.fatality(); 
+               artyom.say("Alright let's begin");
+               //artyom.fatality();
+                instrumentsQuiz(counter);
                 
             } 
         }
