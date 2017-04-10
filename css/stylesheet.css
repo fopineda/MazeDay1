@@ -40,3 +40,28 @@ html, body{
 }
 
 
+@media screen and (max-device-width: 640px){
+    html, body{
+        background-color: red
+    }
+}
+
+@media screen and (max-device-width: 480px){
+   html, body{
+        background-color: orange
+    } 
+}
+
+@media screen and (min-device-width: 768px){
+    html, body{
+        background-color: purple
+    }
+}
+
+@media screen and (min-device-width: 1024px){
+    html, body{
+        background-color: green
+    }
+}
+
+
