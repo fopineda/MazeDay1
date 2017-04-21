@@ -75,7 +75,7 @@ function MainMenu(){
 }
 
 // ANIMALS
-function animalsQuiz(index, score){
+function animalsQuiz(index,score){
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
@@ -86,7 +86,6 @@ function animalsQuiz(index, score){
     ]
     
    if (index == questionsList.length){ // reaches the end of the quiz so go back to main menu
-       artyom.say(score);
         MainMenu();
     }
     else{
@@ -95,7 +94,7 @@ function animalsQuiz(index, score){
 }
 
 // INSTRUMENTS
-function instrumentsQuiz(index, score){
+function instrumentsQuiz(index,score){
     var drumsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
     var harpsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], harp1);
     var trumpetQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["trumpet", "trumpets", "I don't know"], trumpet1);
@@ -106,7 +105,6 @@ function instrumentsQuiz(index, score){
     ]
     
     if (index == questionsList.length){  // reaches the end of the quiz so go back to main menu
-        artyom.say(score);
         MainMenu();
     }
     else{
@@ -140,10 +138,10 @@ function askSoundQuestion(questionstuff){
                 score = score + 1;
                 counter = counter + 1;
                 if (animals == true){
-                    animalsQuiz(counter, score);
+                    animalsQuiz(counter,score);
                 }
                 if (instruments == true){
-                   instrumentsQuiz(counter, score); 
+                   instrumentsQuiz(counter,score); 
                 }
                 // out of bounds error probably, check later??  
             }   
@@ -181,7 +179,7 @@ function askQuestion(simple){
             action = () => {
                 artyom.say("Alright let's begin");
                 animals = true;
-                animalsQuiz(counter);
+                animalsQuiz(counter,score);
             }
         }
         if (i == 1){
@@ -189,7 +187,7 @@ function askQuestion(simple){
                artyom.say("Alright let's begin");
                //artyom.fatality();
                 instruments = true;
-                instrumentsQuiz(counter);
+                instrumentsQuiz(counter, score);
                 
             } 
         }
