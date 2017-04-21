@@ -15,9 +15,15 @@ var dogbark1  = new Howl({
     src: ['dogbark2.mp3']
 })
 
-var coyote1  = new Howl({
-    src: ['coyote3.mp3']
+var pig1  = new Howl({
+    src: ['pig1.mp3']
 })
+
+var elephant1  = new Howl({
+    src: ['elephant1.mp3']
+})
+
+
 
 var drums1  = new Howl({
     src: ['drums1.mp3']
@@ -83,16 +89,22 @@ function animalsQuiz(index,score){
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
+    var elephantQuestion = new SoundQuestion("What is this animal?", ["Elephant", "An Elephant","I don't know"], dogbark1);
+    var pigQuestion = new SoundQuestion("What is this animal?", ["Pig", "A Pig","I don't know"], dogbark1);
+    
+    
     var questionsList = [
         pantherQuestion,
         dolphinQuestion,
         dogQuestion,
+        elephantQuestion,
+        pigQuestion
     ]
     
    var totalQuestions = questionsList.length;
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 12000);
+        setTimeout(MainMenu(), 12000);  // delay for about 3 seconds
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
@@ -113,7 +125,7 @@ function instrumentsQuiz(index,score){
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
         artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 12000);
+        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
         
     }
     else{
