@@ -54,14 +54,14 @@ var panther = {
 //------------------------------------------------ RUNS -----------------------------------------------------
 artyom.addCommands(testing);
 artyom.addCommands(panther);
-//startContinuousArtyom();
+startContinuousArtyom();
 
 var counter = 0;
 var animals = false;
 var instruments = false;
 var score = 0;
 
-//MainMenu();
+MainMenu();
 
 $( "#something" ).click(function() {
     MainMenu();
