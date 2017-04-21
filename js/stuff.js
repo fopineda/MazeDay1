@@ -87,8 +87,8 @@ function animalsQuiz(index,score){
     
    var totalQuestions = questionsList.length;
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
-       artyom.say("Your got "+score+ "out of "+totalQuestions+ "correct");
-        MainMenu();
+       artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
+        setTimeout(MainMenu(), 3000);
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
@@ -108,8 +108,9 @@ function instrumentsQuiz(index,score){
     
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
-        artyom.say("Your got "+score+ "out of "+totalQuestions+ "correct");
-        MainMenu();
+        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
+        setTimeout(MainMenu(), 3000);
+        
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
