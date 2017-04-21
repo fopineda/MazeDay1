@@ -51,10 +51,7 @@ artyom.addCommands(testing);
 artyom.addCommands(panther);
 startContinuousArtyom();
 
-var counter = 0;
-var animals = false;
-var instruments = false;
-var score = 0;
+
 
 MainMenu();
 
@@ -69,6 +66,10 @@ $( "#something" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // To begin
 function MainMenu(){
+    var counter = 0;
+    var animals = false;
+    var instruments = false;
+    var score = 0;
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
