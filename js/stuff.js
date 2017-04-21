@@ -61,7 +61,7 @@ var animals = false;
 var instruments = false;
 var score = 0;
 
-MainMenu();
+//MainMenu();
 
 $( "#something" ).click(function() {
     MainMenu();
