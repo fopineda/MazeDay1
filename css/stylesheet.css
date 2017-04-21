@@ -52,6 +52,12 @@ html, body{
     html, body{
         background-color: red
     }
+    #something {
+        text-align: center;
+        font-family: monospace;
+        font-size: 300%;
+        line-height: 2.0;
+    }
 }
 
 /* 640px - 768px ??? */
