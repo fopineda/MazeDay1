@@ -28,16 +28,13 @@ var elephant1  = new Howl({
 
 // INSTRUMENTS
 var drums1  = new Howl({
-    src: ['drums1.mp3']
+    src: ['instruments/drums1.mp3']
 })
 
 var harp1  = new Howl({
-    src: ['Harp1.wav']
+    src: ['instruments/Harp1.wav']
 })
 
-var trumpet1  = new Howl({
-    src: ['trumpet1.wav']
-})
 
 // MIGHT NOT NEED THIS
 var testing = {
@@ -117,11 +114,9 @@ function animalsQuiz(index,score){
 function instrumentsQuiz(index,score){
     var drumsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
     var harpsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], harp1);
-    var trumpetQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["trumpet", "trumpets", "I don't know"], trumpet1);
     var questionsList = [
         drumsQuestion,
         harpsQuestion,
-        trumpetQuestion,
     ]
     
     var totalQuestions = questionsList.length;
