@@ -66,8 +66,6 @@ $( "#something" ).click(function() {
 });
 
 
-
-
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
@@ -79,20 +77,16 @@ function beginGame(){
 }
 
 function animalsQuiz(index){
-    
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
-    
     var questionsList = [
         pantherQuestion,
         dolphinQuestion,
         dogQuestion,
     ]
     
-    //askSoundQuestion(questionsList[index]);
-   // setTimeout(askSoundQuestion(questionsList[index]), 12000);
-   setTimeout(askSoundQuestion.bind(null, questionsList[index]), 6000); 
+   setTimeout(askSoundQuestion.bind(null, questionsList[index]), 4000); 
 }
 
 function instrumentsQuiz(index){
@@ -106,9 +100,7 @@ function instrumentsQuiz(index){
         trumpetQuestion,
     ]
     
-    //askSoundQuestion(questionsList[index]);
-    //setTimeout(askSoundQuestion(questionsList[index]), 12000);
-    setTimeout(askSoundQuestion.bind(null, questionsList[index]), 6000); 
+    setTimeout(askSoundQuestion.bind(null, questionsList[index]), 4000); 
 }
 
 // SoundQuestion Object (For questions requiring sound before asking question)
