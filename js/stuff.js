@@ -69,10 +69,10 @@ $( "#something" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // To begin
 function MainMenu(){
-    var counter = 0;
-    var animals = false;
-    var instruments = false;
-    var score = 0;
+    counter = 0;
+    animals = false;
+    instruments = false;
+    score = 0;
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
