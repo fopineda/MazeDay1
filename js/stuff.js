@@ -146,7 +146,7 @@ function askSoundQuestion(questionstuff){
             action = () => {
                 artyom.say("Incorrect");
             }
-            setTimeout(askSoundQuestion(questionstuff), 3000);
+            setTimeout(askSoundQuestion.bind(null, questionstuff), 3000); 
             
             
             
