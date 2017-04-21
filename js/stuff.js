@@ -51,7 +51,10 @@ artyom.addCommands(testing);
 artyom.addCommands(panther);
 startContinuousArtyom();
 
-
+var counter = 0;
+var animals = false;
+var instruments = false;
+var score = 0;
 
 MainMenu();
 
