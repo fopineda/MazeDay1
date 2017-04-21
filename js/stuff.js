@@ -89,8 +89,8 @@ function animalsQuiz(index,score){
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
-    var elephantQuestion = new SoundQuestion("What is this animal?", ["Elephant", "An Elephant","I don't know"], dogbark1);
-    var pigQuestion = new SoundQuestion("What is this animal?", ["Pig", "A Pig","I don't know"], dogbark1);
+    var elephantQuestion = new SoundQuestion("What is this animal?", ["Elephant", "An Elephant","I don't know"], elephant11);
+    var pigQuestion = new SoundQuestion("What is this animal?", ["Pig", "A Pig","I don't know"], pig1);
     
     
     var questionsList = [
