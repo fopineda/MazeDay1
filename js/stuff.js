@@ -85,9 +85,9 @@ function animalsQuiz(index,score){
         dogQuestion,
     ]
     
-    var totalQuestions = questionsList.length;
-   if (index == questionsList.length){ // reaches the end of the quiz so go back to main menu
-       artyom.say("Your total corrent was"+score+ "out of "+totalQuestions);
+   var totalQuestions = questionsList.length;
+   if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
+       artyom.say("Your got "+score+ "out of "+totalQuestions+ "correct");
         MainMenu();
     }
     else{
@@ -105,10 +105,10 @@ function instrumentsQuiz(index,score){
         harpsQuestion,
         trumpetQuestion,
     ]
-    var totalQuestions = questionsList.length;
     
-    if (index == questionsList.length){  // reaches the end of the quiz so go back to main menu
-        artyom.say("Your total corrent was"+score+ "out of "+totalQuestions);
+    var totalQuestions = questionsList.length;
+    if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
+        artyom.say("Your got "+score+ "out of "+totalQuestions+ "correct");
         MainMenu();
     }
     else{
