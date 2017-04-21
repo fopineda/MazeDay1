@@ -31,48 +31,5 @@ html, body{
 }
 
 
-/* --------------------------- Media Queries -------------------------------------*/
-/* 0px - 480px */
-@media screen and (max-device-width: 480px){
-   html, body{
-        background-color: orange
-            
-    }
-    #something {
-        text-align: center;
-        font-family: monospace;
-        font-size: 300%;
-        line-height: 2.0;
-    }
-    
-    
-}
-/* 480px - 640px */
-@media screen and (max-device-width: 640px){
-    html, body{
-        background-color: red
-    }
-    #something {
-        text-align: center;
-        font-family: monospace;
-        font-size: 300%;
-        line-height: 2.0;
-    }
-}
-
-/* 640px - 768px ??? */
-
-/* 768px - 1024px */
-@media screen and (min-device-width: 768px){
-    html, body{
-        background-color: purple
-    }
-}
-/* 1024px - infinity*/
-@media screen and (min-device-width: 1024px){
-    html, body{
-        background-color: green
-    }
-}
 
 
