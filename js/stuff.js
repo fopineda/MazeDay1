@@ -142,11 +142,14 @@ function askSoundQuestion(questionstuff){
                 // out of bounds error probably, check later??  
             }   
         }
-        else{
+        if (i == 2){
             action = () => {
                 artyom.say("Incorrect");
             }
             askSoundQuestion(questionstuff);
+            
+            
+            
         }
         return action;
         }
