@@ -86,7 +86,7 @@ function animalsQuiz(index, score){
     ]
     
    if (index == questionsList.length){ // reaches the end of the quiz so go back to main menu
-       artyom.say("Your score is: "+score);
+       artyom.say(score);
         MainMenu();
     }
     else{
@@ -106,7 +106,7 @@ function instrumentsQuiz(index, score){
     ]
     
     if (index == questionsList.length){  // reaches the end of the quiz so go back to main menu
-        artyom.say("Your score is "+score);
+        artyom.say(score);
         MainMenu();
     }
     else{
