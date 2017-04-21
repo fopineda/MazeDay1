@@ -54,11 +54,12 @@ startContinuousArtyom();
 var counter = 0;
 var animals = false;
 var instruments = false;
+var score = 0;
 
-beginGame();
+MainMenu();
 
 $( "#something" ).click(function() {
-    beginGame();
+    MainMenu();
     //artyom.fatality(); 
 });
 
@@ -67,14 +68,14 @@ $( "#something" ).click(function() {
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
 // To begin
-function beginGame(){
+function MainMenu(){
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
 // ANIMALS
-function animalsQuiz(index){
+function animalsQuiz(index, score){
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
@@ -84,8 +85,9 @@ function animalsQuiz(index){
         dogQuestion,
     ]
     
-   if (index == questionsList.length){
-        beginGame();
+   if (index == questionsList.length){ // reaches the end of the quiz so go back to main menu
+       artyom.say(score);
+        MainMenu();
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
@@ -93,8 +95,7 @@ function animalsQuiz(index){
 }
 
 // INSTRUMENTS
-function instrumentsQuiz(index){
-    //var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
+function instrumentsQuiz(index, score){
     var drumsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
     var harpsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], harp1);
     var trumpetQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["trumpet", "trumpets", "I don't know"], trumpet1);
@@ -104,8 +105,9 @@ function instrumentsQuiz(index){
         trumpetQuestion,
     ]
     
-    if (index == questionsList.length){
-        beginGame();
+    if (index == questionsList.length){  // reaches the end of the quiz so go back to main menu
+        artyom.say(score);
+        MainMenu();
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
@@ -135,12 +137,13 @@ function askSoundQuestion(questionstuff){
         if (i == 0){
             action = () => {
                 artyom.say("Correct");
+                score = score + 1;
                 counter = counter + 1;
                 if (animals == true){
-                    animalsQuiz(counter);
+                    animalsQuiz(counter, score);
                 }
                 if (instruments == true){
-                   instrumentsQuiz(counter); 
+                   instrumentsQuiz(counter, score); 
                 }
                 // out of bounds error probably, check later??  
             }   
