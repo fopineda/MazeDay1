@@ -51,9 +51,6 @@ artyom.addCommands(testing);
 artyom.addCommands(panther);
 startContinuousArtyom();
 
-
-var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
-var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
 var counter = 0;
 var animals = false;
 var instruments = false;
@@ -69,13 +66,14 @@ $( "#something" ).click(function() {
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
-// FOR TESTING PURPOSES
+// To begin
 function beginGame(){
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
+// ANIMALS
 function animalsQuiz(index){
     var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var dolphinQuestion = new SoundQuestion("What is this animal?", ["Dolphin", "A Dolphin", "I don't know"], dolphin1);
@@ -86,9 +84,15 @@ function animalsQuiz(index){
         dogQuestion,
     ]
     
-   setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000); 
+   if (index == questionsList.length){
+        beginGame();
+    }
+    else{
+      setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
+    }
 }
 
+// INSTRUMENTS
 function instrumentsQuiz(index){
     //var pantherQuestion = new SoundQuestion("What is this animal?", ["Panther", "Black Panther", "I don't know"], panther1);
     var drumsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
@@ -100,7 +104,14 @@ function instrumentsQuiz(index){
         trumpetQuestion,
     ]
     
-    setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000); 
+    if (index == questionsList.length){
+        beginGame();
+    }
+    else{
+      setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
+    }
+    
+     
 }
 
 // SoundQuestion Object (For questions requiring sound before asking question)
@@ -128,7 +139,7 @@ function askSoundQuestion(questionstuff){
                 if (animals == true){
                     animalsQuiz(counter);
                 }
-                else{
+                if (instruments == true){
                    instrumentsQuiz(counter); 
                 }
                 // out of bounds error probably, check later??  
