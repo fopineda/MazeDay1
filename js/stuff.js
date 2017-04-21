@@ -158,8 +158,15 @@ function askSoundQuestion(questionstuff){
         if (i == 2){
             action = () => {
                 artyom.say("Incorrect");
+                counter = counter + 1;
+                if (animals == true){
+                    animalsQuiz(counter,score);
+                }
+                if (instruments == true){
+                   instrumentsQuiz(counter,score); 
+                }
             }
-            setTimeout(askSoundQuestion.bind(null, questionstuff), 3000); 
+             
             
             
             
