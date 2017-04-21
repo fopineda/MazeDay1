@@ -3,28 +3,30 @@ var tester  = new Howl({
     src: ['Lil Uzi Vert - Seven Million ft. Future.mp3']
 })
 
+
+// ANIMALS
 var panther1  = new Howl({
-    src: ['panther4.mp3']
+    src: ['animals/panther4.mp3']
 })
 
 var dolphin1  = new Howl({
-    src: ['dolphin1.mp3']
+    src: ['animals/dolphin1.mp3']
 })
 
 var dogbark1  = new Howl({
-    src: ['dogbark2.mp3']
+    src: ['animals/dogbark2.mp3']
 })
 
 var pig1  = new Howl({
-    src: ['pig1.mp3']
+    src: ['animals/pig1.mp3']
 })
 
 var elephant1  = new Howl({
-    src: ['elephant1.mp3']
+    src: ['animals/elephant1.mp3']
 })
 
 
-
+// INSTRUMENTS
 var drums1  = new Howl({
     src: ['drums1.mp3']
 })
