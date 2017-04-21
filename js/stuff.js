@@ -92,7 +92,7 @@ function animalsQuiz(index,score){
    var totalQuestions = questionsList.length;
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 3000);
+        setTimeout(MainMenu(), 12000);
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
@@ -113,7 +113,7 @@ function instrumentsQuiz(index,score){
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
         artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 3000);
+        setTimeout(MainMenu(), 12000);
         
     }
     else{
@@ -152,7 +152,6 @@ function askSoundQuestion(questionstuff){
                 if (instruments == true){
                    instrumentsQuiz(counter,score); 
                 }
-                // out of bounds error probably, check later??  
             }   
         }
         if (i == 2){
@@ -166,10 +165,6 @@ function askSoundQuestion(questionstuff){
                    instrumentsQuiz(counter,score); 
                 }
             }
-             
-            
-            
-            
         }
         return action;
         }
@@ -201,10 +196,8 @@ function askQuestion(simple){
         if (i == 1){
             action = () => {
                artyom.say("Alright let's begin");
-               //artyom.fatality();
                 instruments = true;
-                instrumentsQuiz(counter, score);
-                
+                instrumentsQuiz(counter, score);  
             } 
         }
 
