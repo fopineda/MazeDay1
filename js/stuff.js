@@ -63,19 +63,10 @@ var score = 0;
 
 MainMenu();
 
-//$( "#animals" ).click(function() {
-//    animals = true;
-//    button = true;
-//    animalsQuiz(counter,score)
+$( "#something" ).click(function() {
+    MainMenu();
     //artyom.fatality(); 
-//});
-
-//$( "#instruments" ).click(function() {
-//    instruments = true;
-//    button = true;
-//    instrumentsQuiz(counter,score);
-    //artyom.fatality(); 
-//});
+});
 
 
 //askSoundQuestion(pantherQuestion);
@@ -83,23 +74,13 @@ MainMenu();
 //------------------------------------------------ functions -----------------------------------------------------
 // To begin
 function MainMenu(){
-    var counter = 0;
-    var animals = false;
-    var instruments = false;
-    var score = 0;
-    
+    counter = 0;
+    animals = false;
+    instruments = false;
+    score = 0;
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
-    //setTimeout(askQuestion.bind(null, beginingQuestion), 1000);
-}
-
-
-function resetVariables(theCounter, theAnimals, theInstruments, theScore){
-    counter = theCounter;
-    animals = theAnimals;
-    instruments = theInstruments;
-    score = theScore;
 }
 
 // ANIMALS
@@ -109,6 +90,7 @@ function animalsQuiz(index,score){
     var dogQuestion = new SoundQuestion("What is this animal?", ["Dog", "A Dog","I don't know"], dogbark1);
     var elephantQuestion = new SoundQuestion("What is this animal?", ["Elephant", "An Elephant","I don't know"], elephant1);
     var pigQuestion = new SoundQuestion("What is this animal?", ["Pig", "A Pig","I don't know"], pig1);
+    
     
     var questionsList = [
         pantherQuestion,
@@ -121,10 +103,9 @@ function animalsQuiz(index,score){
    var totalQuestions = questionsList.length;
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-       setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
     }
     else{
-        console.log("inside else");
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
     }
 }
@@ -141,7 +122,8 @@ function instrumentsQuiz(index,score){
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
         artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds 
+        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
@@ -171,11 +153,9 @@ function askSoundQuestion(questionstuff){
         if (i == 0){
             action = () => {
                 artyom.say("Correct");
-                 console.log("inside asksoundquestion");
                 score = score + 1;
                 counter = counter + 1;
                 if (animals == true){
-                     console.log("inside animals");
                     animalsQuiz(counter,score);
                 }
                 if (instruments == true){
