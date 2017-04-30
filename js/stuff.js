@@ -77,6 +77,12 @@ MainMenu();
     //artyom.fatality(); 
 //});
 
+$( "#mmButton" ).click(function() {
+    artyom.fatality();
+    startContinuousArtyom();
+    MainMenu();
+});
+
 
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
