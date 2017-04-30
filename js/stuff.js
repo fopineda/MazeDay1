@@ -52,8 +52,8 @@ var panther = {
 
 
 //------------------------------------------------ RUNS -----------------------------------------------------
-//artyom.addCommands(testing);
-//artyom.addCommands(panther);
+artyom.addCommands(testing);
+artyom.addCommands(panther);
 startContinuousArtyom();
 
 var counter = 0;
