@@ -64,19 +64,19 @@ var button = false;
 
 MainMenu();
 
-$( "#animals" ).click(function() {
-    animals = true;
-    button = true;
-    animalsQuiz(counter,score)
+//$( "#animals" ).click(function() {
+//    animals = true;
+//    button = true;
+//    animalsQuiz(counter,score)
     //artyom.fatality(); 
-});
+//});
 
-$( "#instruments" ).click(function() {
-    instruments = true;
-    button = true;
-    instrumentsQuiz(counter,score);
+//$( "#instruments" ).click(function() {
+//    instruments = true;
+//    button = true;
+//    instrumentsQuiz(counter,score);
     //artyom.fatality(); 
-});
+//});
 
 
 //askSoundQuestion(pantherQuestion);
