@@ -90,8 +90,8 @@ function MainMenu(){
     
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
-    //askQuestion(beginingQuestion);
-    setTimeout(askQuestion.bind(null, beginingQuestion), 1000);
+    askQuestion(beginingQuestion);
+    //setTimeout(askQuestion.bind(null, beginingQuestion), 1000);
 }
 
 
