@@ -77,19 +77,17 @@ MainMenu();
     //artyom.fatality(); 
 //});
 
-$( "#clickMMButton" ).click(function() {
-    artyom.fatality();
-    startContinuousArtyom();
-    MainMenu();
-});
-
 
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
 //------------------------------------------------ functions -----------------------------------------------------
 // To begin
 function MainMenu(){
-    resetVariables(0,false, false, 0);
+    var counter = 0;
+    var animals = false;
+    var instruments = false;
+    var score = 0;
+    
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
