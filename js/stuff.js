@@ -52,8 +52,8 @@ var panther = {
 
 
 //------------------------------------------------ RUNS -----------------------------------------------------
-artyom.addCommands(testing);
-artyom.addCommands(panther);
+//artyom.addCommands(testing);
+//artyom.addCommands(panther);
 startContinuousArtyom();
 
 var counter = 0;
@@ -61,15 +61,15 @@ var animals = false;
 var instruments = false;
 var score = 0;
 
-MainMenu();
+//MainMenu();
 
-$( "#something" ).click(function() {
-    MainMenu();
+$( "#animals" ).click(function() {
+    animalsQuiz(0,0)
     //artyom.fatality(); 
 });
 
 $( "#instruments" ).click(function() {
-    MainMenu();
+    instrumentsQuiz(0,0);
     //artyom.fatality(); 
 });
 
