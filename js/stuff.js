@@ -80,7 +80,8 @@ function MainMenu(){
     score = 0;
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
-    askQuestion(beginingQuestion);
+    //askQuestion(beginingQuestion);
+    setTimeout(askQuestion.bind(null, beginingQuestion), 2000); 
 }
 
 // ANIMALS
