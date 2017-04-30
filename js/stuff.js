@@ -68,6 +68,11 @@ $( "#something" ).click(function() {
     //artyom.fatality(); 
 });
 
+$( "#instruments" ).click(function() {
+    MainMenu();
+    //artyom.fatality(); 
+});
+
 
 //askSoundQuestion(pantherQuestion);
 //artyom.simulateInstruction("panther");
