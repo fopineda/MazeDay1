@@ -84,19 +84,19 @@ $( "#instruments" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // To begin
 function MainMenu(){
-    resetVariables(counter, animals, instruments, score, button);
+    resetVariables(0,false, false, 0, false);
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
 
-function resetVariables(counter, animals, instruments, score, button){
-    counter = 0;
-    animals = false;
-    instruments = false;
-    score = 0;
-    button = false;
+function resetVariables(theCounter, theAnimals, theInstruments, theScore, theButton){
+    counter = theCounter;
+    animals = theAnimals;
+    instruments = theInstruments;
+    score = theScore;
+    button = theButton;
 }
 
 // ANIMALS
@@ -122,7 +122,9 @@ function animalsQuiz(index,score){
         if (button == false){
             setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
         }
-       resetVariables(counter, animals, instruments, score, button);
+       resetVariables(0,false, false, 0, false);
+       //counter = 0;
+        //score= 0;
     }
     else{
         console.log("inside else");
@@ -145,7 +147,9 @@ function instrumentsQuiz(index,score){
         if (button == false){
             setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
         }
-        resetVariables(counter, animals, instruments, score, button);
+       resetVariables(0,false, false, 0, false);
+        //counter = 0;
+        //score= 0;
         
     }
     else{
