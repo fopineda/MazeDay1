@@ -60,17 +60,20 @@ var counter = 0;
 var animals = false;
 var instruments = false;
 var score = 0;
+var button = false;
 
 //MainMenu();
 
 $( "#animals" ).click(function() {
     animals = true;
+    button = true;
     animalsQuiz(counter,score)
     //artyom.fatality(); 
 });
 
 $( "#instruments" ).click(function() {
     instruments = true;
+    button = true;
     instrumentsQuiz(counter,score);
     //artyom.fatality(); 
 });
@@ -85,6 +88,7 @@ function MainMenu(){
     animals = false;
     instruments = false;
     score = 0;
+    button = false;
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
@@ -110,7 +114,9 @@ function animalsQuiz(index,score){
    var totalQuestions = questionsList.length;
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 12000);  // delay for about 3 seconds
+        if (button == false){
+            setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        }
     }
     else{
         console.log("inside else");
@@ -130,7 +136,10 @@ function instrumentsQuiz(index,score){
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
         artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        if (button == false){
+            setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        }
+        
         
     }
     else{
