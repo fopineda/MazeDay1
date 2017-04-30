@@ -95,7 +95,6 @@ function resetVariables(theCounter, theAnimals, theInstruments, theScore){
     animals = theAnimals;
     instruments = theInstruments;
     score = theScore;
-    button = theButton;
 }
 
 // ANIMALS
