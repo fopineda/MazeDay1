@@ -64,12 +64,12 @@ var score = 0;
 //MainMenu();
 
 $( "#animals" ).click(function() {
-    animalsQuiz(0,0)
+    animalsQuiz(counter,score)
     //artyom.fatality(); 
 });
 
 $( "#instruments" ).click(function() {
-    instrumentsQuiz(0,0);
+    instrumentsQuiz(counter,score);
     //artyom.fatality(); 
 });
 
