@@ -60,7 +60,6 @@ var counter = 0;
 var animals = false;
 var instruments = false;
 var score = 0;
-var button = false;
 
 MainMenu();
 
@@ -84,14 +83,14 @@ MainMenu();
 //------------------------------------------------ functions -----------------------------------------------------
 // To begin
 function MainMenu(){
-    resetVariables(0,false, false, 0, false);
+    resetVariables(0,false, false, 0);
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
 
-function resetVariables(theCounter, theAnimals, theInstruments, theScore, theButton){
+function resetVariables(theCounter, theAnimals, theInstruments, theScore){
     counter = theCounter;
     animals = theAnimals;
     instruments = theInstruments;
@@ -119,12 +118,7 @@ function animalsQuiz(index,score){
    var totalQuestions = questionsList.length;
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        if (button == false){
-            setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
-        }
-       resetVariables(0,false, false, 0, false);
-       //counter = 0;
-        //score= 0;
+       setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
     }
     else{
         console.log("inside else");
@@ -144,13 +138,7 @@ function instrumentsQuiz(index,score){
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
         artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        if (button == false){
-            setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
-        }
-       resetVariables(0,false, false, 0, false);
-        //counter = 0;
-        //score= 0;
-        
+        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds 
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
