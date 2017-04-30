@@ -61,20 +61,27 @@ var animals = false;
 var instruments = false;
 var score = 0;
 var button = false;
+var runningVoice = true;
 
-//MainMenu();
+MainMenu();
 
 $( "#animals" ).click(function() {
     animals = true;
     button = true;
-    animalsQuiz(counter,score)
+    if (runningVoice == false){
+        animalsQuiz(counter,score);
+    }
+    
     //artyom.fatality(); 
 });
 
 $( "#instruments" ).click(function() {
     instruments = true;
     button = true;
-    instrumentsQuiz(counter,score);
+    if (runningVoice == false){
+        instrumentsQuiz(counter,score);
+    }
+    
     //artyom.fatality(); 
 });
 
@@ -84,19 +91,20 @@ $( "#instruments" ).click(function() {
 //------------------------------------------------ functions -----------------------------------------------------
 // To begin
 function MainMenu(){
-    resetVariables(0,false, false, 0, false);
+    resetVariables(0,false, false, 0, false, true);
     artyom.say("We have Animals and Instruments sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
     askQuestion(beginingQuestion);
 }
 
 
-function resetVariables(theCounter, theAnimals, theInstruments, theScore, theButton){
+function resetVariables(theCounter, theAnimals, theInstruments, theScore, theButton, theRunningVoice){
     counter = theCounter;
     animals = theAnimals;
     instruments = theInstruments;
     score = theScore;
     button = theButton;
+    runningVoice = theRunningVoice;
 }
 
 // ANIMALS
@@ -119,10 +127,10 @@ function animalsQuiz(index,score){
    var totalQuestions = questionsList.length;
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        if (button == false){
+        if (button == false){  // not in button
             setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
         }
-       resetVariables(0,false, false, 0, false);
+       resetVariables(0,false, false, 0, false, false);
        //counter = 0;
         //score= 0;
     }
@@ -147,7 +155,7 @@ function instrumentsQuiz(index,score){
         if (button == false){
             setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
         }
-       resetVariables(0,false, false, 0, false);
+       resetVariables(0,false, false, 0, false, false);
         //counter = 0;
         //score= 0;
         
