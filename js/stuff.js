@@ -111,6 +111,7 @@ function animalsQuiz(index,score){
         setTimeout(MainMenu(), 12000);  // delay for about 3 seconds
     }
     else{
+        console.log("inside else");
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
     }
 }
@@ -158,9 +159,11 @@ function askSoundQuestion(questionstuff){
         if (i == 0){
             action = () => {
                 artyom.say("Correct");
+                 console.log("inside asksoundquestion");
                 score = score + 1;
                 counter = counter + 1;
                 if (animals == true){
+                     console.log("inside animals");
                     animalsQuiz(counter,score);
                 }
                 if (instruments == true){
