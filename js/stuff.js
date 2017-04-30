@@ -77,7 +77,7 @@ MainMenu();
     //artyom.fatality(); 
 //});
 
-$( "#mmButton" ).click(function() {
+$( "#clickMMButton" ).click(function() {
     artyom.fatality();
     startContinuousArtyom();
     MainMenu();
