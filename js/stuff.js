@@ -190,10 +190,10 @@ function carsQuiz(index,score){
      
 }
 
-// CARS
+// People
 function peopleQuiz(index,score){
     var sneezeQuestion = new SoundQuestion("What is this sound?", ["sneeze", "a sneeze", "I don't know"], sneeze1);
-    var burpQuestion = new SoundQuestion("What is this sound?", ["burp", "a burp", "I don't know"], alarm1);
+    var burpQuestion = new SoundQuestion("What is this sound?", ["burp", "a burp", "I don't know"], burp1);
     var slurpQuestion = new SoundQuestion("What is this sound?", ["slurp", "a slurp", "I don't know"], slupr1);
     var questionsList = [
         sneezeQuestion,
