@@ -51,6 +51,17 @@ var horn1  = new Howl({
     src: ['cars/horn1.mp3']
 })
 
+// People
+var sneeze1  = new Howl({
+    src: ['humans/sneeze1.mp3']
+})
+var burp1  = new Howl({
+    src: ['humans/burp1.mp3']
+})
+var slupr1  = new Howl({
+    src: ['humans/slurp1.mp3']
+})
+
 // MIGHT NOT NEED THIS
 var testing = {
     indexes:["Play song", "Uzi", "Play some trap"], // These spoken words will trigger the execution of the command
@@ -75,6 +86,7 @@ var counter = 0;
 var animals = false;
 var instruments = false;
 var cars = false;
+var people = false;
 var score = 0;
 
 MainMenu();
@@ -94,10 +106,11 @@ function MainMenu(){
     animals = false;
     instruments = false;
     cars = false;
+    people = false;
     score = 0;
     
-    artyom.say("We have Animals, Instruments, and Cars sounds");
-    var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments", "Cars"]);
+    artyom.say("We have Animals, Instruments, Cars, and People sounds");
+    var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments", "Cars", "People"]);
     //askQuestion(beginingQuestion);
     setTimeout(askQuestion.bind(null, beginingQuestion), 2000); 
 }
@@ -177,6 +190,30 @@ function carsQuiz(index,score){
      
 }
 
+// CARS
+function peopleQuiz(index,score){
+    var sneezeQuestion = new SoundQuestion("What is this sound?", ["sneeze", "a sneeze", "I don't know"], sneeze1);
+    var burpQuestion = new SoundQuestion("What is this sound?", ["burp", "a burp", "I don't know"], alarm1);
+    var slurpQuestion = new SoundQuestion("What is this sound?", ["slurp", "a slurp", "I don't know"], slupr1);
+    var questionsList = [
+        sneezeQuestion,
+        burpQuestion,
+        slurpQuestion,
+    ]
+    
+    var totalQuestions = questionsList.length;
+    if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
+        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
+        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        
+    }
+    else{
+      setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
+    }
+    
+     
+}
+
 // SoundQuestion Object (For questions requiring sound before asking question)
 function SoundQuestion(myQuestion, myOptions, myNoise){
     // (constructor pattern)
@@ -209,6 +246,9 @@ function askSoundQuestion(questionstuff){
                 if (cars == true){
                    carsQuiz(counter,score); 
                 }
+                if (people == true){
+                   peopleQuiz(counter,score); 
+                }
             }   
         }
         if (i == 2){
@@ -223,6 +263,9 @@ function askSoundQuestion(questionstuff){
                 }
                 if (cars == true){
                    carsQuiz(counter,score); 
+                }
+                if (people == true){
+                   peopleQuiz(counter,score); 
                 }
             }
         }
@@ -266,6 +309,13 @@ function askQuestion(simple){
                artyom.say("Alright let's begin");
                 cars = true;
                 carsQuiz(counter, score);  
+            } 
+        }
+        if (i == 3){
+            action = () => {
+               artyom.say("Alright let's begin");
+                people = true;
+                peopleQuiz(counter, score);  
             } 
         }
 
