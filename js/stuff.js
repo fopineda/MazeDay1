@@ -40,6 +40,17 @@ var gong1  = new Howl({
 })
 
 
+// CARS
+var amb1  = new Howl({
+    src: ['cars/amb1.mp3']
+})
+var alarm1  = new Howl({
+    src: ['cars/alarm1.mp3']
+})
+var horn1  = new Howl({
+    src: ['cars/horn1.mp3']
+})
+
 // MIGHT NOT NEED THIS
 var testing = {
     indexes:["Play song", "Uzi", "Play some trap"], // These spoken words will trigger the execution of the command
@@ -63,6 +74,7 @@ startContinuousArtyom();
 var counter = 0;
 var animals = false;
 var instruments = false;
+var cars = false;
 var score = 0;
 
 MainMenu();
@@ -81,9 +93,11 @@ function MainMenu(){
     counter = 0;
     animals = false;
     instruments = false;
+    cars = false;
     score = 0;
+    
     artyom.say("We have Animals and Instruments sounds");
-    var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments"]);
+    var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments", "Cars"]);
     //askQuestion(beginingQuestion);
     setTimeout(askQuestion.bind(null, beginingQuestion), 2000); 
 }
@@ -119,11 +133,35 @@ function animalsQuiz(index,score){
 function instrumentsQuiz(index,score){
     var drumsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Drums", "Drum", "I don't know"], drums1);
     var harpsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Harp", "Harps", "I don't know"], harp1);
-    var gongsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Gong", "A gong", "I don't know"], gong1);
+    var gongsQuestion = new SoundQuestion("What's the instrument that plays this sound?", ["Gone", "A gone", "I don't know"], gong1);
     var questionsList = [
         drumsQuestion,
         harpsQuestion,
         gongsQuestion,
+    ]
+    
+    var totalQuestions = questionsList.length;
+    if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
+        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
+        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        
+    }
+    else{
+      setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
+    }
+    
+     
+}
+
+// CARS
+function carsQuiz(index,score){
+    var ambQuestion = new SoundQuestion("What is this sound?", ["ambulance", "an ambulance", "I don't know"], amb1);
+    var alarmQuestion = new SoundQuestion("What is this sound?", ["alarm", "car alarm", "I don't know"], alarm1);
+    var hornQuestion = new SoundQuestion("What is this sound?", ["horn", "car horn", "I don't know"], horn1);
+    var questionsList = [
+        ambQuestion,
+        alarmQuestion,
+        hornQuestion,
     ]
     
     var totalQuestions = questionsList.length;
@@ -182,6 +220,7 @@ function askSoundQuestion(questionstuff){
                 }
             }
         }
+        
         return action;
         }
         })}, 3000);
@@ -214,6 +253,13 @@ function askQuestion(simple){
                artyom.say("Alright let's begin");
                 instruments = true;
                 instrumentsQuiz(counter, score);  
+            } 
+        }
+        if (i == 2){
+            action = () => {
+               artyom.say("Alright let's begin");
+                cars = true;
+                carsQuiz(counter, score);  
             } 
         }
 
