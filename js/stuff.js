@@ -96,7 +96,7 @@ function MainMenu(){
     cars = false;
     score = 0;
     
-    artyom.say("We have Animals and Instruments sounds");
+    artyom.say("We have Animals, Instruments, and Cars sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments", "Cars"]);
     //askQuestion(beginingQuestion);
     setTimeout(askQuestion.bind(null, beginingQuestion), 2000); 
@@ -206,6 +206,9 @@ function askSoundQuestion(questionstuff){
                 if (instruments == true){
                    instrumentsQuiz(counter,score); 
                 }
+                if (cars == true){
+                   carsQuiz(counter,score); 
+                }
             }   
         }
         if (i == 2){
@@ -217,6 +220,9 @@ function askSoundQuestion(questionstuff){
                 }
                 if (instruments == true){
                    instrumentsQuiz(counter,score); 
+                }
+                if (cars == true){
+                   carsQuiz(counter,score); 
                 }
             }
         }
