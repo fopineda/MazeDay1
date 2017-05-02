@@ -266,7 +266,7 @@ function askSoundQuestion(questionstuff){
             action = () => {
                 artyom.say("Incorrect");
                 counter = counter + 1;
-                artyom.say("the correct answer is"+ 0);
+                artyom.say("the correct answer is"+ questionstuff.soundOptions[0]);
                 if (animals == true){
                     animalsQuiz(counter,score);
                 }
