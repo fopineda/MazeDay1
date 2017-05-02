@@ -233,7 +233,7 @@ function askSoundQuestion(questionstuff){
         options: questionstuff.soundOptions,
         onMatch: (i) => {
         var action;
-        if (i == 0){
+        if (i == 0 || i == 1){
             action = () => {
                 artyom.say("Correct");
                 score = score + 1;
