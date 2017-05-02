@@ -109,7 +109,7 @@ function MainMenu(){
     people = false;
     score = 0;
     
-    artyom.say("We have Animals, Instruments, Cars, and People sounds");
+    //artyom.say("We have Animals, Instruments, Cars, and People sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments", "Cars", "People"]);
     //askQuestion(beginingQuestion);
     console.log("inside mmm");
@@ -137,6 +137,7 @@ function animalsQuiz(index,score){
    var totalQuestions = questionsList.length;
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
+       artyom.say("We have Animals, Instruments, Cars, and People sounds");
         setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
     }
     else{
