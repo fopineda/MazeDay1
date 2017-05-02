@@ -112,6 +112,12 @@ function MainMenu(){
     artyom.say("We have Animals, Instruments, Cars, and People sounds");
     var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments", "Cars", "People"]);
     //askQuestion(beginingQuestion);
+    artyom.dontObey();
+    setTimeout(() => {
+    // Enable command recognition again
+    artyom.obey();
+    // Try to say hello again and now the command will be recognized
+    }, 2000);
     setTimeout(askQuestion.bind(null, beginingQuestion), 2000); 
 }
 
