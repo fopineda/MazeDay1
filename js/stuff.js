@@ -211,6 +211,7 @@ function peopleQuiz(index,score){
     ]
     
     var totalQuestions = questionsList.length;
+    if (index == totalQuestions){ 
        first = false;
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct, We have Animals, Instruments, Cars, and People sounds");
         setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
