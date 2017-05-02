@@ -176,8 +176,8 @@ function instrumentsQuiz(index,score){
 
 // CARS
 function carsQuiz(index,score){
-    var ambQuestion = new SoundQuestion("What is this sound?", ["ambulance", "an ambulance", "I don't know"], amb1);
-    var alarmQuestion = new SoundQuestion("What is this sound?", ["police", "police siren", "I don't know"], alarm1);
+    var ambQuestion = new SoundQuestion("What is this sound?", ["ambulance", "police", "I don't know"], amb1);
+    var alarmQuestion = new SoundQuestion("What is this sound?", ["police", "ambulance", "I don't know"], alarm1);
     var hornQuestion = new SoundQuestion("What is this sound?", ["horn", "car horn", "I don't know"], horn1);
     var questionsList = [
         ambQuestion,
