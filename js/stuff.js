@@ -257,6 +257,25 @@ function askSoundQuestion(questionstuff){
                 }
             }   
         }
+            
+        if (i != 0){
+            action = () => {
+                artyom.say("Incorrect");
+                counter = counter + 1;
+                if (animals == true){
+                    animalsQuiz(counter,score);
+                }
+                if (instruments == true){
+                   instrumentsQuiz(counter,score); 
+                }
+                if (cars == true){
+                   carsQuiz(counter,score); 
+                }
+                if (people == true){
+                   peopleQuiz(counter,score); 
+                }
+            }
+        }
         if (i == 2 || i != 0){
             action = () => {
                 artyom.say("Incorrect");
