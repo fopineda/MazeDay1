@@ -210,7 +210,8 @@ function peopleQuiz(index,score){
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){ 
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        //setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        window.location.reload();
         
     }
     else{
@@ -258,7 +259,7 @@ function askSoundQuestion(questionstuff){
             }   
         }
             
-        else {
+        if (i == 2){
             action = () => {
                 artyom.say("Incorrect");
                 counter = counter + 1;
