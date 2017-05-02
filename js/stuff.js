@@ -257,7 +257,7 @@ function askSoundQuestion(questionstuff){
                 }
             }   
         }
-        if (i == 2){
+        if (i == 2 || i != 0){
             action = () => {
                 artyom.say("Incorrect");
                 counter = counter + 1;
