@@ -141,7 +141,8 @@ function animalsQuiz(index,score){
    if (index == totalQuestions){ // reaches the end of the quiz so go back to main menu
        artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
        //artyom.say("We have Animals, Instruments, Cars, and People sounds");
-        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        //setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+       window.location.reload();
     }
     else{
       setTimeout(askSoundQuestion.bind(null, questionsList[index]), 3000);  
@@ -162,7 +163,8 @@ function instrumentsQuiz(index,score){
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
         artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        //setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        window.location.reload();
         
     }
     else{
@@ -186,7 +188,8 @@ function carsQuiz(index,score){
     var totalQuestions = questionsList.length;
     if (index == totalQuestions){  // reaches the end of the quiz so go back to main menu
         artyom.say("You got "+score+ "out of "+totalQuestions+ "correct");
-        setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        //setTimeout(MainMenu(), 3000);  // delay for about 3 seconds
+        window.location.reload();
         
     }
     else{
