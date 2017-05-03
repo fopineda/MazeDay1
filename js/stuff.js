@@ -113,7 +113,7 @@ function MainMenu(){
     
     artyom.say("We have Animals, Instruments, Cars, and People sounds"); 
 
-    var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments", "Cars", "People"]);
+    var beginingQuestion = new Question("Which would you like to hear?", ["Animals", "Instruments", "Cars", "People", "Play some Trap", "trap"]);
     //askQuestion(beginingQuestion);
     console.log("inside mmm");
 
@@ -333,7 +333,12 @@ function askQuestion(simple){
                 peopleQuiz(counter, score);  
             } 
         }
-
+        if (i == 4 || i == 5){
+            action = () => {
+               tester.play(); 
+            } 
+        }    
+            
         return action;
         }
         })}, 3000);
