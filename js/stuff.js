@@ -92,10 +92,10 @@ var first = true;
 
 MainMenu();
 
-$( "#something" ).click(function() {
-    MainMenu();
+//$( "#something" ).click(function() {
+//    MainMenu();
     //artyom.fatality(); 
-});
+//});
 
 
 //askSoundQuestion(pantherQuestion);
